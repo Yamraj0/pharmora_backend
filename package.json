@@ -1,0 +1,32 @@
+{
+  "name": "pharmora_backend",
+  "version": "1.0.0",
+  "description": "Backend services api",
+  "homepage": "https://github.com/Yamraj0/pharmora_backend#readme",
+  "bugs": {
+    "url": "https://github.com/Yamraj0/pharmora_backend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yamraj0/pharmora_backend.git"
+  },
+  "license": "ISC",
+  "author": "Ojha Group",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.7",
+    "express": "^5.3.0",
+    "joi": "^18.2.9",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.11.1",
+    "morgan": "^1.12.1",
+    "uuid": "^14.0.3",
+    "zod": "^4.6.6"
+  }
+}
