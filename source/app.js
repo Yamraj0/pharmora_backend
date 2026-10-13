@@ -3,10 +3,12 @@ import express from 'express';
 
 import errorHandler from './middleware/ErrorHandlers.js';
  import AppError from "./utils/AppError.js";
+import authRoute from './modules/Auth/auth.route.js';
 
 const app = express();
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 
 app.get('/',(req,res)=>{
@@ -16,6 +18,8 @@ app.get('/',(req,res)=>{
         success:true
     })
 });
+
+app.use('/api/v1/auth',authRoute);
 
 // 404 handler
 app.use((req, res, next) => {
