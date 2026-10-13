@@ -1,15 +1,25 @@
-import { setRandomFallback } from 'bcryptjs';
+
 import express from 'express';
-import { success } from 'zod';
-import errorHandler from './middleware/ErrorHandlers';
+
+import errorHandler from './middleware/ErrorHandlers.js';
+ import AppError from "./utils/AppError.js";
 
 const app = express();
 
 app.use(express.json());
 
+
+app.get('/',(req,res)=>{
+    res.status(200).json({
+        message:'hey Muji ',
+        data:[],
+        success:true
+    })
+});
+
 // 404 handler
 app.use((req, res, next) => {
-  const AppError = require("./utils/AppError");
+ 
 
   next(
     new AppError(
@@ -23,12 +33,5 @@ app.use((req, res, next) => {
 app.use(errorHandler);
 
 
-app.get('/',(req,res)=>{
-    res.status(200).json({
-        message:'hey Muji ',
-        data:[],
-        success:true
-    })
-});
 
 export default app;
